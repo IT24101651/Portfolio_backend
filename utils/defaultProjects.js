@@ -40,6 +40,7 @@ const defaultProjects = [
     githubLink: 'https://github.com/Paviththiran.K',
     liveDemo: 'https://www.linkedin.com/in/paviththiran-kumarasooriyar',
     category: 'AI',
+    order: 1,
   },
   {
     title: 'SUSI Photography Website',
@@ -50,6 +51,7 @@ const defaultProjects = [
     githubLink: 'https://github.com/Paviththiran.K',
     liveDemo: 'https://www.linkedin.com/in/paviththiran-kumarasooriyar',
     category: 'Full Stack',
+    order: 2,
   },
   {
     title: 'POS & Student Order System',
@@ -60,6 +62,7 @@ const defaultProjects = [
     githubLink: 'https://github.com/Paviththiran.K',
     liveDemo: 'https://www.linkedin.com/in/paviththiran-kumarasooriyar',
     category: 'POS',
+    order: 3,
   },
   {
     title: 'Mood-Based Movie Recommendation System',
@@ -70,6 +73,7 @@ const defaultProjects = [
     githubLink: 'https://github.com/Paviththiran.K',
     liveDemo: 'https://www.linkedin.com/in/paviththiran-kumarasooriyar',
     category: 'ML',
+    order: 4,
   },
   {
     title: 'Voting System for Reality Shows',
@@ -80,6 +84,7 @@ const defaultProjects = [
     githubLink: 'https://github.com/Paviththiran.K',
     liveDemo: 'https://www.linkedin.com/in/paviththiran-kumarasooriyar',
     category: 'Backend',
+    order: 5,
   },
   {
     title: 'Online Bookstore Management System',
@@ -90,6 +95,7 @@ const defaultProjects = [
     githubLink: 'https://github.com/Paviththiran.K',
     liveDemo: 'https://www.linkedin.com/in/paviththiran-kumarasooriyar',
     category: 'Web',
+    order: 6,
   },
   {
     title: 'Automated Greenhouse System',
@@ -100,6 +106,7 @@ const defaultProjects = [
     githubLink: 'https://github.com/Paviththiran.K',
     liveDemo: 'https://www.linkedin.com/in/paviththiran-kumarasooriyar',
     category: 'IoT',
+    order: 7,
   },
   {
     title: 'Smart Student Living Platform',
@@ -110,6 +117,7 @@ const defaultProjects = [
     githubLink: 'https://github.com/Paviththiran.K',
     liveDemo: 'https://www.linkedin.com/in/paviththiran-kumarasooriyar',
     category: 'Mobile',
+    order: 8,
   },
 ];
 

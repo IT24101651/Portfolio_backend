@@ -92,6 +92,8 @@ function validateProjectInput(req, res, next) {
   const githubLink = normalizeString(req.body.githubLink);
   const liveDemo = normalizeString(req.body.liveDemo);
   const category = normalizeString(req.body.category);
+  const orderValue = req.body.order;
+  const order = Number.parseInt(orderValue, 10);
 
   if (!title) errors.push('Title is required.');
   if (!description) errors.push('Description is required.');
@@ -100,6 +102,7 @@ function validateProjectInput(req, res, next) {
   if (githubLink && !isValidUrl(githubLink)) errors.push('GitHub link must be a valid URL.');
   if (liveDemo && !isValidUrl(liveDemo)) errors.push('Live demo must be a valid URL.');
   if (!category) errors.push('Category is required.');
+  if (!Number.isInteger(order) || order < 0) errors.push('Project order must be a whole number zero or greater.');
 
   req.body = {
     ...req.body,
@@ -110,6 +113,7 @@ function validateProjectInput(req, res, next) {
     githubLink,
     liveDemo,
     category,
+    order,
   };
 
   if (errors.length) {

@@ -45,6 +45,12 @@ const projectSchema = new mongoose.Schema(
       trim: true,
       maxlength: 80,
     },
+    order: {
+      type: Number,
+      required: [true, 'Project order is required'],
+      min: 0,
+      default: 0,
+    },
   },
   {
     timestamps: true,

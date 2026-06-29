@@ -50,6 +50,7 @@ npm run dev
 - `GET /api/projects`
 - `GET /api/projects/:id`
 - `GET /api/resume`
+- `POST /api/resume/upload`
 - `POST /api/visitor`
 - `GET /api/health`
 

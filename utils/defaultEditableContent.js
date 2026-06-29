@@ -31,6 +31,7 @@ function getDefaultEditableContent() {
       chips: ['Data Science', 'Full Stack Development', 'Machine Learning'],
       availability: 'Open for internships and graduate opportunities',
       avatarSrc: '/profile-avatar.jpeg',
+      avatarObjectPosition: 'center center',
     },
     about: {
       eyebrow: 'About Me',
@@ -158,6 +159,38 @@ function getDefaultEditableContent() {
         },
       ],
     },
+    certifications: {
+      eyebrow: 'Certifications',
+      title: 'Learning milestones that show steady technical growth.',
+      description:
+        'These certificates can be connected to verified course completion pages or uploaded proof files.',
+      items: [
+        {
+          title: 'Python for Beginners',
+          issuer: 'Introductory Programming',
+          year: '2024',
+          link: 'https://www.linkedin.com/in/paviththiran-kumarasooriyar',
+        },
+        {
+          title: 'Machine Learning Fundamentals',
+          issuer: 'Applied AI',
+          year: '2024',
+          link: 'https://www.linkedin.com/in/paviththiran-kumarasooriyar',
+        },
+        {
+          title: 'Data Science Essentials',
+          issuer: 'Data Analytics',
+          year: '2024',
+          link: 'https://www.linkedin.com/in/paviththiran-kumarasooriyar',
+        },
+        {
+          title: 'Git & GitHub',
+          issuer: 'Developer Workflow',
+          year: '2024',
+          link: 'https://www.linkedin.com/in/paviththiran-kumarasooriyar',
+        },
+      ],
+    },
     resume: {
       eyebrow: 'Resume',
       name: 'Kumarasooriyar Paviththiran',
@@ -178,6 +211,9 @@ function getDefaultEditableContent() {
         'Cloud deployment and collaborative development',
       ],
       buttonLabel: 'Download Resume',
+      resumeFileUrl: '',
+      resumeFileName: '',
+      resumeFileDataUrl: '',
     },
     contact: {
       eyebrow: 'Contact',

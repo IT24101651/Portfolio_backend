@@ -22,7 +22,28 @@ function mergeValue(defaultValue, incomingValue) {
 }
 
 function normalizeContent(content) {
-  return mergeValue(getDefaultEditableContent(), content || {});
+  const merged = mergeValue(getDefaultEditableContent(), content || {});
+  const sharedIconKeys = ['github', 'linkedin', 'email'];
+  const detailsByKey = new Map(
+    Array.isArray(merged.contact?.directDetails)
+      ? merged.contact.directDetails
+          .filter((item) => item && sharedIconKeys.includes(item.iconKey) && item.href)
+          .map((item) => [
+            item.iconKey,
+            {
+              label: item.label || item.iconKey,
+              href: item.href,
+              iconKey: item.iconKey,
+            },
+          ])
+      : [],
+  );
+  const sharedLinks = sharedIconKeys.map((iconKey) => detailsByKey.get(iconKey)).filter(Boolean);
+
+  return {
+    ...merged,
+    socialLinks: sharedLinks.length ? sharedLinks : merged.socialLinks,
+  };
 }
 
 async function getStoredContent() {
@@ -56,14 +77,16 @@ const updateContent = asyncHandler(async (req, res) => {
 
   await SiteContent.findOneAndUpdate(
     { key: 'main' },
-    { key: 'main', content },
-    { upsert: true, new: true, runValidators: false },
+    { $set: { key: 'main', content } },
+    { upsert: true, new: true, runValidators: false, setDefaultsOnInsert: true },
   );
+
+  const storedContent = await getStoredContent();
 
   return res.json({
     success: true,
     message: 'Operation successful',
-    data: content,
+    data: normalizeContent(storedContent || content),
   });
 });
 

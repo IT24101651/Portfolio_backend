@@ -1,5 +1,6 @@
 require('dotenv').config();
 
+const path = require('node:path');
 const cors = require('cors');
 const express = require('express');
 const helmet = require('helmet');
@@ -99,8 +100,9 @@ async function bootstrap() {
     })
   );
 
-  app.use(express.json({ limit: '1mb' }));
-  app.use(express.urlencoded({ extended: true }));
+  app.use(express.json({ limit: '20mb' }));
+  app.use(express.urlencoded({ extended: true, limit: '20mb' }));
+  app.use('/uploads', express.static(path.join(__dirname, 'public', 'uploads')));
 
   if (process.env.NODE_ENV !== 'production') {
     app.use(morgan('dev'));
